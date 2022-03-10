@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BMI</title>
+        <link rel="stylesheet" href="css/style1.css">
+        <script>
+            function calculate(){
+                const h = parseFloat(document.getElementById('h').value)
+                const w = parseFloat(document.getElementById('w').value)
+                const h_squared = h*h 
+                const bmi_ans =  w/ h_squared 
+                if (bmi_ans < 18.5){
+                    
+                    alert('Underweight')
+                } 
+                else if(bmi_ans < 24.9){
+                    
+                    alert('Healthy Weight')
+                }
+                else if(bmi_ans < 29.9){
+                    
+                    alert('Overweight')
+                }else {
+                    
+                    alert('Obese')
+                }  
+                
+            }
+             
+        </script>
+
+
+    </head>
+    <body>
+        <h1>BMI Calculator</h1> 
+        <div  class="calc">
+            <form action="http://localhost:3000/process-bmi-results" method="POST">
+                Enter Your Height :
+                <input id ="h"type="text" name="height"/> <br>
+                Enter Your Weight: 
+                <input id="w" type="text" name="weight"/> <br>
+                <input onclick= "calculate()" type="button" value="calculate"/> <br>
+            </form>   
+        </div>
+        
+        
+    </body>
+</html>
